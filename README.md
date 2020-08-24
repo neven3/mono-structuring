@@ -1,3 +1,6 @@
+Malo sam promijenio kod od prošlog primjera, koristio sam hooks, Context API i react-router-dom.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
