@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import './styles.css';
 import CardList from '../../Components/CardList';
 
-function Edit() {
+function Edit(props) {
+    // console.log(props)
     return (
         <div className="screen">
             <h2>Edit a card</h2>

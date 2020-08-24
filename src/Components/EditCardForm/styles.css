@@ -1,0 +1,32 @@
+.card-container.edit-card {
+    border: 5px solid lightcoral;
+}
+
+.card-container .changes-btn {
+    margin: 10px 0 0;
+    font-size: 15px;
+    padding: 10px 0;
+    background-color: lightgreen;
+    border: 1px solid green;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.field label {
+    text-transform: capitalize;
+}
+
+.field input {
+    padding: 3px;
+}
+
+.card-container .field {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.card-container.edit-card:hover {
+    transform: none;
+    cursor: default;
+}

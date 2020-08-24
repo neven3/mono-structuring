@@ -5,17 +5,13 @@ import './styles.css';
 
 function AddCardForm() {
     const rootStore = useRootStore();
-    const { vehicleModel } = rootStore;
-    const [carMake, setCarMake] = React.useState('');
-    const [carModel, setCarModel] = React.useState('');
+    const { vehicleModel, vehicleMake } = rootStore;
     
     function onFormSubmit(e) {
-        console.log(rootStore.cars);
         e.preventDefault();
-        // vehicleMake.setMake(carMake);
         makeInputBlank(e.target.make);
         makeInputBlank(e.target.model);
-        vehicleModel.addCar(carMake, carModel);
+        vehicleMake.addCar(vehicleModel.model);
     }
 
     return (
@@ -30,7 +26,7 @@ function AddCardForm() {
                     type="text"
                     id="make"
                     name="make"
-                    onChange={(e) => setCarMake(e.target.value)}
+                    onChange={(e) => vehicleMake.setMake(e.target.value)}
                     />
 
                 <label htmlFor="model">Model:</label>
@@ -39,7 +35,7 @@ function AddCardForm() {
                     type="text"
                     id="model"
                     name="model"
-                    onChange={(e) => setCarModel(e.target.value)}
+                    onChange={(e) => vehicleModel.setModel(e.target.value)}
                 />
 
                 <button className="check-app add" type="submit">Make car</button>

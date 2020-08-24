@@ -4,23 +4,30 @@ import { decorate, observable, action } from "mobx";
 class VehicleModel {
     constructor(rootStore) {
         this.rootStore = rootStore;
+        this.model = '';
     }
 
     // addView
     addCar = (make, model) => {
+        if (make && model)
         this.rootStore.cars.push({ make, model, id: nanoid() });
     };
 
-    // listView
-    removeCar = (id) => {
-        this.rootStore.cars.filter(car => car.id !== id);
-    };
+    resetModel = () => this.model = '';
+    
+    setModel = (model) => {
+        if (model !== '') {
+            this.model = model;
+        }
+    }
 }
 
 decorate(VehicleModel, {
-    cars: observable,
+    model: observable,
     addCar: action,
-    removeCar: action,
+    setModel: action,
+    resetModel: action,
+    // removeCar: action,
 });
 
 export default VehicleModel;

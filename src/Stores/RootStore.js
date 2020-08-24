@@ -17,18 +17,24 @@ class RootStore {
     currentPage = 1;
     cardsPerPage = 6;
     
+    // listView
     setCurrentPage = (e) => {
-        if (this.pageNumbersArray.length === 1) {
-            this.currentPage = 1;
-        } else {
-            this.currentPage = e.target.id;
-        }
+        this.currentPage = e.target.id;
     }
 
+    // editView
+    changeCarSpec = (carToChange, make, model) => {
+        const carIndex = this.cars.indexOf(carToChange);
+        this.cars[carIndex].make = make;
+        this.cars[carIndex].model = model;
+    };
+
+    // listView
     changeSearchText = (event) => {
         this.searchText = event.target.value;
     };
 
+    // listView
     setSortParams = (sortBy, direction) => {
         this.sortParams = {sortBy, direction};
     };
