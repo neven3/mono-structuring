@@ -1,5 +1,5 @@
-import VehicleModel from './VehicleModel';
-import VehicleMake from './VehicleMake';
+import VehicleModel from './VehicleModelModule/VehicleModel';
+import VehicleMake from './VehicleMakeModule/VehicleMake';
 import { decorate, observable, computed, action } from 'mobx';
 import mockData from '../Common/mockData';
 import sortItems from '../Common/sortItems';
