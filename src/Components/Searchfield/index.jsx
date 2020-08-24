@@ -1,16 +1,21 @@
 import React from 'react';
 import './styles.css';
+import { useRootStore } from '../../Context/RootStateContext';
+// import { observer } from 'mobx-react';
 
-function Searchfield(props) {
+function Searchfield() {
+    const rootStore = useRootStore();
+    const { changeSearchText, searchText } = rootStore;
+
     return (
         <div>
             <h2>Find a car</h2>
             <input
-                className="search"
-                onChange={props.onChange}
+                className="text-input"
+                onChange={changeSearchText}
                 type="search"
                 placeholder="Search"
-                defaultValue={props.searchText}
+                defaultValue={searchText}
             />
         </div>
     );

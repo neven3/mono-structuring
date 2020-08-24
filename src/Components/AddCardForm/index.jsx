@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRootStore } from '../../Context/RootStateContext';
 import makeInputBlank from '../../Common/makeInputBlank';
+import './styles.css';
 
 function AddCardForm() {
     const rootStore = useRootStore();
@@ -19,9 +20,13 @@ function AddCardForm() {
 
     return (
         <div>
-            <form action="" onSubmit={onFormSubmit}>
+            <form
+                className="add-card-form"
+                onSubmit={onFormSubmit}
+            >
                 <label htmlFor="make">Make:</label>
                 <input
+                    className="text-input"
                     type="text"
                     id="make"
                     name="make"
@@ -30,13 +35,14 @@ function AddCardForm() {
 
                 <label htmlFor="model">Model:</label>
                 <input
+                    className="text-input"
                     type="text"
                     id="model"
                     name="model"
                     onChange={(e) => setCarModel(e.target.value)}
                 />
 
-                <button type="submit">Make car</button>
+                <button className="check-app add" type="submit">Make car</button>
             </form>
         </div>
     );

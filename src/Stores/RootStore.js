@@ -24,6 +24,10 @@ class RootStore {
             this.currentPage = e.target.id;
         }
     }
+
+    changeSearchText = (event) => {
+        this.searchText = event.target.value;
+    };
     
     constructor() {
         this.vehicleMake = new VehicleMake(this);
@@ -48,7 +52,7 @@ class RootStore {
     get pageNumbersArray() {
         const pageNumbers = [];
 
-        for (let i = 1; i <= Math.ceil(this.cars.length / this.cardsPerPage); i++) {
+        for (let i = 1; i <= Math.ceil(this.filteredCars.length / this.cardsPerPage); i++) {
             pageNumbers.push(i);
         }
 
@@ -66,6 +70,7 @@ decorate(RootStore, {
     setCurrentPage: action,
     filteredCars: computed,
     currentCars: computed,
+    changeSearchText: action,
 });
 
 export default RootStore;

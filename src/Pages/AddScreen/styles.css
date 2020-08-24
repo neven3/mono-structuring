@@ -1,0 +1,11 @@
+.add-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.add-screen .link {
+    position: absolute;
+    right: 300px;
+}

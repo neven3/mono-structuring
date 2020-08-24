@@ -5,8 +5,8 @@ import { observer } from 'mobx-react';
 
 function Pagination() {
     const rootStore = useRootStore();
-    console.log(rootStore.cars.length)
-    return(
+    
+    return (
         <div>
             {rootStore.pageNumbersArray.map(pageNum => {
                 return <button
