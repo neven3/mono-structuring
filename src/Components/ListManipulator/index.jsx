@@ -1,18 +1,12 @@
 import React from 'react';
 import Searchfield from '../Searchfield';
-import SortContainer from '../SortContainer/SortContainer';
+import SortContainer from '../SortContainer';
 
-function ListManipulator(props) {
+function ListManipulator() {
     return (
         <div>
-            <Searchfield 
-                onChange={props.handleSearchfieldChange}
-                placeholder="search"
-                searchText={props.searchText}
-            />
-            <SortContainer 
-                doOnSortClick={props.doOnSortClick}
-            />
+            <Searchfield />
+            <SortContainer />
         </div>
     );
 }

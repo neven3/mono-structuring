@@ -1,17 +1,16 @@
 import React from 'react';
 import './styles.css';
+import { useRootStore } from '../../Context/RootStateContext';
 
-function SortButton(props) {
-    function handleClick() {
-        props.onClick(props.sortBy, props.direction);
-    }
-    
+function SortButton({ sortBy, direction }) {
+    const rootStore = useRootStore();
+
     return(
         <button
             className="sort-button"
-            onClick={handleClick}
+            onClick={() => rootStore.setSortParams(sortBy, direction)}
         >
-            Sort {props.direction}
+            Sort {direction}
         </button>
     );
 }

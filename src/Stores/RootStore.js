@@ -28,6 +28,10 @@ class RootStore {
     changeSearchText = (event) => {
         this.searchText = event.target.value;
     };
+
+    setSortParams = (sortBy, direction) => {
+        this.sortParams = {sortBy, direction};
+    };
     
     constructor() {
         this.vehicleMake = new VehicleMake(this);
@@ -71,6 +75,7 @@ decorate(RootStore, {
     filteredCars: computed,
     currentCars: computed,
     changeSearchText: action,
+    setSortParams: action,
 });
 
 export default RootStore;
