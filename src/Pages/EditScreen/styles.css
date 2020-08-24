@@ -1,0 +1,24 @@
+.screen h2 {
+    color: goldenrod;
+}
+
+.screen h3:not(".car-make") {
+    font-size: 30px;
+    color: white;
+}
+
+.go-back-button {
+    cursor: pointer;
+    font-size: 30px;
+    padding: 30px;
+    border: none;
+    border-radius: 10px;
+    transition: 0.3s linear;
+    /* position: absolute; */
+    /* top: 250px; */
+    /* right: 200px; */
+}
+
+.go-back-button:hover {
+    background-color: lightskyblue;
+}

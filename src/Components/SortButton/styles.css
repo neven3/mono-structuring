@@ -1,0 +1,12 @@
+.sort-button {
+    cursor: 'pointer';
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    border: none;
+    background-color: lightskyblue;
+}
+
+.sort-button:hover {
+    cursor: pointer;
+}

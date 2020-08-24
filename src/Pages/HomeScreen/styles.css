@@ -1,0 +1,17 @@
+.welcome{
+    text-align: center;
+    margin-top: 200px;
+}
+
+.check-app {
+    cursor: pointer;
+    font-size: 30px;
+    padding: 30px;
+    border: none;
+    border-radius: 10px;
+    transition: 0.3s linear;
+}
+
+.check-app:hover {
+    background-color: goldenrod;
+}

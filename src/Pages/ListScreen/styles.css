@@ -1,0 +1,30 @@
+.link {
+    cursor: pointer;
+    font-size: 30px;
+    padding: 30px;
+    border: none;
+    border-radius: 10px;
+    transition: 0.3s linear;
+    text-decoration: none;
+    color: inherit;
+    /* position: absolute; */
+    /* top: 250px; */
+    /* right: 200px; */
+    margin: 30px;
+}
+
+.add {
+    background-color: lightgreen;
+}
+
+.edit {
+    background-color: lightcoral;
+}
+
+.add:hover {
+    background-color: rgb(120, 185, 21);
+}
+
+.edit:hover {
+    background-color: rgb(241, 76, 76);
+}
