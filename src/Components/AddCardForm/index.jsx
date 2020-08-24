@@ -2,6 +2,7 @@ import React from 'react';
 import { useRootStore } from '../../Context/RootStateContext';
 import makeInputBlank from '../../Common/makeInputBlank';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 function AddCardForm() {
     const rootStore = useRootStore();
@@ -12,6 +13,8 @@ function AddCardForm() {
         makeInputBlank(e.target.make);
         makeInputBlank(e.target.model);
         vehicleMake.addCar(vehicleModel.model);
+        vehicleMake.resetMake();
+        vehicleModel.resetModel();
     }
 
     return (
@@ -38,7 +41,12 @@ function AddCardForm() {
                     onChange={(e) => vehicleModel.setModel(e.target.value)}
                 />
 
-                <button className="check-app add" type="submit">Make car</button>
+                <button
+                    className="check-app add"
+                    type="submit"
+                >
+                        Make car
+                </button>
             </form>
         </div>
     );

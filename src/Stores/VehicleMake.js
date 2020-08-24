@@ -11,6 +11,7 @@ class VehicleMake {
         this.rootStore.vehicleModel.addCar(this.make, model);
     };
 
+    // add and edit
     resetMake = () => this.make = '';
 
     // edit
@@ -19,9 +20,6 @@ class VehicleMake {
             this.make = make;
         }
     };
-
-    // list
-    // what should I list here?
 }
 
 decorate(VehicleMake, {

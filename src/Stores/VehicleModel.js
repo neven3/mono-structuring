@@ -7,14 +7,16 @@ class VehicleModel {
         this.model = '';
     }
 
-    // addView
+    // add
     addCar = (make, model) => {
         if (make && model)
         this.rootStore.cars.push({ make, model, id: nanoid() });
     };
 
+    // add and edit
     resetModel = () => this.model = '';
     
+    // add and edit
     setModel = (model) => {
         if (model !== '') {
             this.model = model;
@@ -27,7 +29,6 @@ decorate(VehicleModel, {
     addCar: action,
     setModel: action,
     resetModel: action,
-    // removeCar: action,
 });
 
 export default VehicleModel;

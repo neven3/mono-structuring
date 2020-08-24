@@ -30,7 +30,7 @@ function EditCardForm(props) {
                     id="make"
                     name="make"
                     placeholder={props.car.make}
-                    onChange={(e) => vehicleMake.setMake((e.target.value || props.car.make))}
+                    onChange={(e) => e.target.value !== '' ? vehicleMake.setMake(e.target.value) : vehicleMake.setMake(props.car.make)}
                     />
 
                 <label htmlFor="model">Model:</label>
@@ -40,9 +40,8 @@ function EditCardForm(props) {
                     placeholder={props.car.model}
                     id="model"
                     name="model"
-                    onChange={(e) => {
-                        vehicleModel.setModel((e.target.value || props.car.model))
-                        console.log(vehicleModel)
+                    onChange={(e) => {e.target.value !== '' ?
+                        vehicleModel.setModel(e.target.value) : vehicleModel.setModel(props.car.model)
                     }}
                 />
 
@@ -50,9 +49,7 @@ function EditCardForm(props) {
                     className="check-app add"
                     type="submit"
                 >
-                    <Link to="/list">
                         Edit car
-                    </Link>
                 </button>
             </form>
         </div>

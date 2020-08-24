@@ -12,29 +12,29 @@ class RootStore {
         sortBy: 'make',
         direction: 'ascending',
     };
-    
+
     searchText = '';
     currentPage = 1;
     cardsPerPage = 6;
     
-    // listView
+    // list
     setCurrentPage = (e) => {
         this.currentPage = e.target.id;
     }
 
-    // editView
+    // edit
     changeCarSpec = (carToChange, make, model) => {
         const carIndex = this.cars.indexOf(carToChange);
         this.cars[carIndex].make = make;
         this.cars[carIndex].model = model;
     };
 
-    // listView
+    // list
     changeSearchText = (event) => {
         this.searchText = event.target.value;
     };
 
-    // listView
+    // list
     setSortParams = (sortBy, direction) => {
         this.sortParams = {sortBy, direction};
     };
@@ -44,6 +44,7 @@ class RootStore {
         this.vehicleModel = new VehicleModel(this);
     }
 
+    // list
     get filteredCars() {
         const sortedCars = sortItems(this.cars.slice(), this.sortParams.direction, this.sortParams.sortBy);
     
@@ -55,10 +56,12 @@ class RootStore {
         });
     }
 
+    // list
     get currentCars() {
         return getCurrentCards(this.filteredCars, this.currentPage, this.cardsPerPage);
     }
 
+    // list
     get pageNumbersArray() {
         const pageNumbers = [];
 
