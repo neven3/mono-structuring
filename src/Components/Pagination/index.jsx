@@ -1,11 +1,25 @@
 import React from 'react';
+import { useRootStore } from '../../Context/RootStateContext';
+import './styles.css';
+import { observer } from 'mobx-react';
 
 function Pagination() {
-    return (
+    const rootStore = useRootStore();
+    console.log(rootStore.cars.length)
+    return(
         <div>
-            Pagination
+            {rootStore.pageNumbersArray.map(pageNum => {
+                return <button
+                    className="page-button"
+                    key={pageNum}
+                    id={pageNum}
+                    onClick={rootStore.setCurrentPage}
+                >
+                    {pageNum}
+                </button>
+            })}
         </div>
     );
 }
 
-export default Pagination;
+export default observer(Pagination);

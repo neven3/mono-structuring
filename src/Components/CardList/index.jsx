@@ -6,12 +6,12 @@ import { useRootStore } from '../../Context/RootStateContext';
 
 function CardList() {
     const rootStore = useRootStore();
-
+    
     return (
         <div className='card-list'>
             {
-               rootStore.cars.length
-                    ? rootStore.cars.map(car => {
+               rootStore.currentCars.length
+                    ? rootStore.currentCars.map(car => {
                         return (
                             <Card 
                                 key={car.id}

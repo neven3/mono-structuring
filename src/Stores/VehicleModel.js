@@ -6,7 +6,6 @@ class VehicleModel {
         this.rootStore = rootStore;
     }
 
-
     // addView
     addCar = (make, model) => {
         this.rootStore.cars.push({ make, model, id: nanoid() });

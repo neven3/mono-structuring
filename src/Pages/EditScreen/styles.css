@@ -2,7 +2,7 @@
     color: goldenrod;
 }
 
-.screen h3:not(".car-make") {
+.screen h3:not(.car-make) {
     font-size: 30px;
     color: white;
 }

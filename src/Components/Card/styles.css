@@ -6,6 +6,7 @@
   background-color: #95dada;
   border: 1px solid grey;
   border-radius: 5px;
+  text-align: center;
   padding: 25px;
   cursor: pointer;
   -moz-osx-font-smoothing: grayscale;
