@@ -1,5 +1,5 @@
-import VehicleModel from './VehicleModelModule/VehicleModel';
-import VehicleMake from './VehicleMakeModule/VehicleMake';
+import VehicleModel from './VehicleModel';
+import VehicleMake from './VehicleMake';
 import { decorate, observable, computed, action } from 'mobx';
 import mockData from '../Common/mockData';
 import sortItems from '../Common/sortItems';
@@ -25,8 +25,8 @@ class RootStore {
     // edit
     changeCarSpec = (carToChange, make, model) => {
         const carIndex = this.cars.indexOf(carToChange);
-        this.cars[carIndex].make = make;
-        this.cars[carIndex].model = model;
+        this.cars[carIndex].make = make || carToChange.make;
+        this.cars[carIndex].model = model || carToChange.model;
     };
 
     // list

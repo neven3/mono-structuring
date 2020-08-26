@@ -20,7 +20,7 @@ function Card(props) {
         <div>
             {
                 cardClicked
-                    ? <EditCardForm car={props.car} />
+                    ? <EditCardForm setCardClicked={setCardClicked} car={props.car} />
                     : normalCard
             }
         </div>

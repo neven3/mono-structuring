@@ -2,7 +2,6 @@ import React from 'react';
 import './styles.css'
 import makeInputBlank from '../../Common/makeInputBlank';
 import { useRootStore } from '../../Context/RootStateContext';
-import { Link } from 'react-router-dom';
 
 function EditCardForm(props) {
     const rootStore = useRootStore();
@@ -15,6 +14,7 @@ function EditCardForm(props) {
         rootStore.changeCarSpec(props.car, vehicleMake.make, vehicleModel.model);
         vehicleMake.resetMake();
         vehicleModel.resetModel();
+        props.setCardClicked(false);
     }
 
     return (
