@@ -20,7 +20,7 @@ class RootStore {
     // list
     setCurrentPage = (e) => {
         this.currentPage = e.target.id;
-    }
+    };
 
     // edit
     changeCarSpec = (carToChange, make, model) => {

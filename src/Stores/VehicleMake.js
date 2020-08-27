@@ -1,8 +1,13 @@
 import { decorate, observable, action } from "mobx";
+import AddViewStore from "./VehicleMakeModule/MakeAddViewStore";
+import EditViewStore from "./VehicleMakeModule/MakeEditViewStore";
 
 class VehicleMake {
     constructor(rootStore) {
         this.rootStore = rootStore;
+        this.addViewStore = new AddViewStore(this);
+        this.editViewStore = new EditViewStore(this);
+        // this.listViewStore = new ListViewStore(this);
         this.make = '';
     }
 
