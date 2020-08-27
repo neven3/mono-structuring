@@ -23,8 +23,8 @@ class AddViewStore {
         e.preventDefault();
         makeInputBlank(e.target.model);
         makeInputBlank(e.target.make);
-        vehicleMakeStore.addCar(this.vehicleModel.model);
-        vehicleMakeStore.resetMake();
+        vehicleMakeStore.addViewStore.addCar(this.vehicleModel.model);
+        vehicleMakeStore.addViewStore.resetMake();
         this.resetModel();
     };
 

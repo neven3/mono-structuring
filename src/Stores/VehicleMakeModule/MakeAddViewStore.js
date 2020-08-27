@@ -3,7 +3,7 @@ import { decorate, action } from "mobx";
 class AddViewStore {
     // add
     addCar = (model) => {
-        this.vehicleMake.rootStore.vehicleModel.addCar(this.vehicleMake.make, model);
+        this.vehicleMake.rootStore.vehicleModel.addViewStore.addCar(this.vehicleMake.make, model);
     };
 
     // add and edit
@@ -17,7 +17,7 @@ class AddViewStore {
     };
 
     onAddFormSubmit = (e) => {
-        this.vehicleMake.rootStore.vehicleModel.onAddFormSubmit(this.vehicleMake, e);
+        this.vehicleMake.rootStore.vehicleModel.addViewStore.onAddFormSubmit(this.vehicleMake, e);
     };
 
     constructor(vehicleMake) {
