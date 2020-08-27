@@ -12,25 +12,29 @@ class EditViewStore {
     };
 
     setModel = (model) => {
-        if (model !=='') {
+        // if (model !=='') {
             this.vehicleModel.model = model;
-        }
+        // }
     }
 
-    cardClicked = false;
+    // cardClicked = false;
 
-    toggleCardClicked = (bool) => this.cardClicked = bool;
+    // toggleCardClicked = (bool) => {
+    //     console.log(this.cardClicked)
+    //     this.cardClicked = bool;
+    //     console.log(this.cardClicked)
+    // };
 
     resetModel = () => this.vehicleModel.model = '';
 
-    onEditFormSubmit = (vehicleMakeStore, carToChange, event) => {
+    onEditFormSubmit = (vehicleMakeEditStore, carToChange, event) => {
         event.preventDefault();
         makeInputBlank(event.target.model);
         makeInputBlank(event.target.make);
-        vehicleMakeStore.changeCarSpec(carToChange, this.vehicleModel.model);
-        vehicleMakeStore.resetMake();
+        vehicleMakeEditStore.changeCarSpec(carToChange, this.vehicleModel.model);
+        vehicleMakeEditStore.resetMake();
         this.resetModel();
-        this.toggleCardClicked();
+        // this.toggleCardClicked(false);
     };
 
     constructor(vehicleModel) {

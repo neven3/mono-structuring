@@ -22,7 +22,14 @@ function EditCardForm(props) {
         <div className="card-container edit-card">
             <form
                 className="add-card-form"
-                onSubmit={(e) => vehicleMake.editViewStore.onEditFormSubmit(props.car, e)}
+                onSubmit={(e) => {
+                    // e.preventDefault();
+                    vehicleMake.editViewStore.onEditFormSubmit(props.car, e)
+                    props.setCardClicked(false);
+                }
+                }
+                
+                // onSubmit={(e) => vehicleMake.editViewStore.onEditFormSubmit(props.car, e)}
             >
                 <label htmlFor="make">Make:</label>
                 <input
