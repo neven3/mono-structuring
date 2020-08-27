@@ -1,7 +1,6 @@
 import React from 'react';
 import './styles.css';
 import { useRootStore } from '../../Context/RootStateContext';
-// import { observer } from 'mobx-react';
 
 function Searchfield() {
     const rootStore = useRootStore();

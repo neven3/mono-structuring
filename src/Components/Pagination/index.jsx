@@ -8,16 +8,20 @@ function Pagination() {
     
     return (
         <div>
-            {rootStore.pageNumbersArray.map(pageNum => {
-                return <button
-                    className="page-button"
-                    key={pageNum}
-                    id={pageNum}
-                    onClick={rootStore.setCurrentPage}
-                >
-                    {pageNum}
-                </button>
-            })}
+            {
+                rootStore.pageNumbersArray.map(pageNum => {
+                    return (
+                        <button
+                            className="page-button"
+                            key={pageNum}
+                            id={pageNum}
+                            onClick={rootStore.setCurrentPage}
+                        >
+                            {pageNum}
+                        </button>
+                    );
+                })
+            }
         </div>
     );
 }

@@ -2,8 +2,7 @@ import React from 'react';
 import './styles.css'
 import { Link } from 'react-router-dom';
 
-export default function Home(props) {
-
+function Home() {
     return(
         <div className="welcome">
             <h1>Hi, welcome to my test project!</h1>
@@ -13,3 +12,5 @@ export default function Home(props) {
         </div>
     );
 };
+
+export default Home;

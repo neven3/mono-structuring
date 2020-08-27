@@ -5,12 +5,8 @@ import ListManipulator from '../../Components/ListManipulator';
 import CardList from '../../Components/CardList';
 import Pagination from '../../Components/Pagination';
 import { observer } from 'mobx-react';
-// import { useRootStore } from '../../Context/RootStateContext';
 
 function ListScreen() {
-    // const rootStore = useRootStore();
-    // const { vehicleModel } = rootStore;
-
     return (
         <div className="Main">
             <h1>Cars</h1>

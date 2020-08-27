@@ -2,7 +2,6 @@ import React from 'react';
 import { useRootStore } from '../../Context/RootStateContext';
 import makeInputBlank from '../../Common/makeInputBlank';
 import './styles.css';
-import { Link } from 'react-router-dom';
 
 function AddCardForm() {
     const rootStore = useRootStore();
