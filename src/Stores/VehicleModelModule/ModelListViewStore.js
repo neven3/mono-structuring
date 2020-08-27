@@ -17,17 +17,24 @@ class ListViewStore {
 
     // list
     setCurrentPage = (e) => {
-        this.currentPage = e.target.id;
+        if (e?.target?.classList?.contains('page-button')) {
+            document.querySelectorAll('.page-button').forEach(btn => btn.classList.remove('active'))
+            // console.log(e.target)
+            e.target.classList.add('active');
+        }
+        this.currentPage = e?.target?.id || 1;
     };
 
     // list
     changeSearchText = (event) => {
         this.searchText = event.target.value;
+        this.setCurrentPage();
     };
 
     // list
     setSortParams = (sortBy, direction) => {
         this.sortParams = { sortBy, direction };
+        this.setCurrentPage();
     };
 
     constructor(vehicleModel) {

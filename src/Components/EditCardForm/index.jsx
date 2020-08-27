@@ -26,8 +26,7 @@ function EditCardForm(props) {
                     // e.preventDefault();
                     vehicleMake.editViewStore.onEditFormSubmit(props.car, e)
                     props.setCardClicked(false);
-                }
-                }
+                }}
                 
                 // onSubmit={(e) => vehicleMake.editViewStore.onEditFormSubmit(props.car, e)}
             >
@@ -39,7 +38,7 @@ function EditCardForm(props) {
                     name="make"
                     placeholder={props.car.make}
                     onChange={(e) => vehicleMake.editViewStore.setMake(e.target.value)}
-                    />
+                />
 
                 <label htmlFor="model">Model:</label>
                 <input
