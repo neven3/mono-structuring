@@ -24,9 +24,11 @@ class RootStore {
 
     // edit
     changeCarSpec = (carToChange, make, model) => {
-        const carIndex = this.cars.indexOf(carToChange);
-        this.cars[carIndex].make = make || carToChange.make;
-        this.cars[carIndex].model = model || carToChange.model;
+        // const carIndex = this.cars.indexOf(carToChange);
+        // this.cars[carIndex].make = make || carToChange.make;
+        // this.cars[carIndex].model = model || carToChange.model;
+        carToChange.make = make || carToChange.make;
+        carToChange.model = model || carToChange.model;
     };
 
     // list
