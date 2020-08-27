@@ -1,27 +1,28 @@
 import React from 'react';
 import './styles.css'
-import makeInputBlank from '../../Common/makeInputBlank';
+// import makeInputBlank from '../../Common/makeInputBlank';
 import { useRootStore } from '../../Context/RootStateContext';
+import { observer } from 'mobx-react';
 
 function EditCardForm(props) {
     const rootStore = useRootStore();
     const { vehicleModel, vehicleMake } = rootStore;
     
-    function onFormSubmit(e) {
-        e.preventDefault();
-        makeInputBlank(e.target.make);
-        makeInputBlank(e.target.model);
-        rootStore.changeCarSpec(props.car, vehicleMake.make, vehicleModel.model);
-        vehicleMake.resetMake();
-        vehicleModel.resetModel();
-        props.setCardClicked(false);
-    }
+    // function onFormSubmit(e) {
+    //     e.preventDefault();
+    //     makeInputBlank(e.target.make);
+    //     makeInputBlank(e.target.model);
+    //     rootStore.changeCarSpec(props.car, vehicleMake.make, vehicleModel.model);
+    //     vehicleMake.resetMake();
+    //     vehicleModel.resetModel();
+    //     props.setCardClicked(false);
+    // }
 
     return (
         <div className="card-container edit-card">
             <form
                 className="add-card-form"
-                onSubmit={onFormSubmit}
+                onSubmit={(e) => vehicleMake.editViewStore.onEditFormSubmit(props.car, e)}
             >
                 <label htmlFor="make">Make:</label>
                 <input
@@ -30,7 +31,7 @@ function EditCardForm(props) {
                     id="make"
                     name="make"
                     placeholder={props.car.make}
-                    onChange={(e) => vehicleMake.setMake(e.target.value)}
+                    onChange={(e) => vehicleMake.editViewStore.setMake(e.target.value)}
                     />
 
                 <label htmlFor="model">Model:</label>
@@ -40,7 +41,7 @@ function EditCardForm(props) {
                     placeholder={props.car.model}
                     id="model"
                     name="model"
-                    onChange={(e) => vehicleModel.setModel(e.target.value)}
+                    onChange={(e) => vehicleModel.editViewStore.setModel(e.target.value)}
                 />
 
                 <button
@@ -54,4 +55,4 @@ function EditCardForm(props) {
     );
 };
 
-export default EditCardForm;
+export default observer(EditCardForm);

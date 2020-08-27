@@ -1,6 +1,6 @@
 // import mockData from '../../Common/mockData';
-import sortItems from '../Common/sortItems';
-import getCurrentCards from '../Common/getCurrentCards';
+import sortItems from '../../Common/sortItems';
+import getCurrentCards from '../../Common/getCurrentCards';
 import { decorate, observable, computed, action } from 'mobx';
 
 class ListViewStore {

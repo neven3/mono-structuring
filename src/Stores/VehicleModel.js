@@ -1,9 +1,9 @@
-import { nanoid } from 'nanoid';
-import { decorate, observable, action } from "mobx";
+// import { nanoid } from 'nanoid';
+import { decorate, observable/* , action */ } from "mobx";
 import ListViewStore from './VehicleModelModule/ModelListViewStore';
 import EditViewStore from './VehicleModelModule/ModelEditViewStore';
 import AddViewStore from './VehicleModelModule/ModelAddViewStore';
-import mockData from '../../Common/mockData';
+import mockData from '../Common/mockData';
 
 class VehicleModel {
     constructor(rootStore) {
@@ -16,28 +16,30 @@ class VehicleModel {
 
     cars = mockData.slice();
 
-    // add
-    addCar = (make, model) => {
-        if (make && model)
-        this.rootStore.cars.push({ make, model, id: nanoid() });
-    };
+    // // add
+    // addCar = (make, model) => {
+    //     if (make && model)
+    //     this.rootStore.cars.push({ make, model, id: nanoid() });
+    // };
 
-    // add and edit
-    resetModel = () => this.model = '';
+    // // add and edit
+    // resetModel = () => this.model = '';
     
-    // add and edit
-    setModel = (model) => {
-        if (model !== '') {
-            this.model = model;
-        }
-    }
+    // // add and edit
+    // setModel = (model) => {
+    //     if (model !== '') {
+    //         this.model = model;
+    //     }
+    // }
 }
 
 decorate(VehicleModel, {
+    cars: observable,
+    // new above
     model: observable,
-    addCar: action,
-    setModel: action,
-    resetModel: action,
+    // addCar: action,
+    // setModel: action,
+    // resetModel: action,
 });
 
 export default VehicleModel;

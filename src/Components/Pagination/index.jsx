@@ -5,17 +5,18 @@ import { observer } from 'mobx-react';
 
 function Pagination() {
     const rootStore = useRootStore();
+    const { vehicleModel } = rootStore;
     
     return (
         <div>
             {
-                rootStore.pageNumbersArray.map(pageNum => {
+                vehicleModel.listViewStore.pageNumbersArray.map(pageNum => {
                     return (
                         <button
                             className="page-button"
                             key={pageNum}
                             id={pageNum}
-                            onClick={rootStore.setCurrentPage}
+                            onClick={vehicleModel.listViewStore.setCurrentPage}
                         >
                             {pageNum}
                         </button>

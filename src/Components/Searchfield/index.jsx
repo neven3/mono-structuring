@@ -4,17 +4,17 @@ import { useRootStore } from '../../Context/RootStateContext';
 
 function Searchfield() {
     const rootStore = useRootStore();
-    const { changeSearchText, searchText } = rootStore;
+    const { vehicleModel: { listViewStore } } = rootStore;
 
     return (
         <div>
             <h2>Find a car</h2>
             <input
                 className="text-input"
-                onChange={changeSearchText}
+                onChange={listViewStore.changeSearchText}
                 type="search"
                 placeholder="Search"
-                defaultValue={searchText}
+                defaultValue={listViewStore.searchText}
             />
         </div>
     );

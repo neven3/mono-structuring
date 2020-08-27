@@ -19,7 +19,7 @@ class EditViewStore {
 
     cardClicked = false;
 
-    toggleCardClicked = () => !this.cardClicked;
+    toggleCardClicked = (bool) => this.cardClicked = bool;
 
     resetModel = () => this.vehicleModel.model = '';
 

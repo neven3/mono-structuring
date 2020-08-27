@@ -8,7 +8,7 @@ function SortButton({ sortBy, direction }) {
     return(
         <button
             className="sort-button"
-            onClick={() => rootStore.setSortParams(sortBy, direction)}
+            onClick={() => rootStore.vehicleModel.listViewStore.setSortParams(sortBy, direction)}
         >
             Sort {direction}
         </button>
