@@ -16,4 +16,4 @@ export default function sortItems (array, direction, sortByKey) {
             }
         });
     }
-};
+}

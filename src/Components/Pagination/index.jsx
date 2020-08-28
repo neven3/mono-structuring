@@ -10,10 +10,10 @@ function Pagination() {
     return (
         <div>
             {
-                listViewStore.pageNumbersArray.map(pageNum => {
+                listViewStore.pageNumbersArray.map((pageNum, index) => {
                     return (
                         <button
-                            className="page-button"
+                            className={`page-button ${listViewStore.currentPage === index + 1 ? 'active' : ''}`}
                             key={pageNum}
                             id={pageNum}
                             onClick={listViewStore.setCurrentPage}

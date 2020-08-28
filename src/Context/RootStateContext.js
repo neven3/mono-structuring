@@ -3,7 +3,7 @@ import RootStore from '../Stores/RootStore';
 
 const RootStateContext = React.createContext(null);
 
-export function RootStateProvider({children}) {
+export function RootStateProvider({ children }) {
     const stores = new RootStore();
 
     return (

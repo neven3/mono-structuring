@@ -5,8 +5,6 @@ import HomeScreen from './Pages/HomeScreen';
 import ListScreen from './Pages/ListScreen';
 import AddScreen from './Pages/AddScreen';
 import EditScreen from './Pages/EditScreen';
-// import RootStore from './Stores/RootStore';
-
 
 function App() {
   return (

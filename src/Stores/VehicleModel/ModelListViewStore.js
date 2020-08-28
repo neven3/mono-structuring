@@ -1,11 +1,8 @@
-// import mockData from '../../Common/mockData';
 import sortItems from '../../Common/sortItems';
 import getCurrentCards from '../../Common/getCurrentCards';
 import { decorate, observable, computed, action } from 'mobx';
 
 class ListViewStore {
-    // cars = mockData.slice();
-
     sortParams = {
         sortBy: 'make',
         direction: 'ascending',
@@ -15,23 +12,18 @@ class ListViewStore {
     currentPage = 1;
     cardsPerPage = 6;
 
-    // list
     setCurrentPage = (e) => {
-        if (e?.target?.classList?.contains('page-button')) {
-            document.querySelectorAll('.page-button').forEach(btn => btn.classList.remove('active'))
-            // console.log(e.target)
-            e.target.classList.add('active');
-        }
+        const btns = document.querySelectorAll('.page-button');
         this.currentPage = e?.target?.id || 1;
+        btns.forEach(btn => btn.classList.remove('active'));
+        btns[this.currentPage - 1].classList.add('active');
     };
 
-    // list
     changeSearchText = (event) => {
         this.searchText = event.target.value;
         this.setCurrentPage();
     };
 
-    // list
     setSortParams = (sortBy, direction) => {
         this.sortParams = { sortBy, direction };
         this.setCurrentPage();
@@ -41,7 +33,6 @@ class ListViewStore {
         this.vehicleModel = vehicleModel;
     }
 
-    // list
     get filteredCars() {
         const sortedCars = sortItems(this.vehicleModel.cars.slice(), this.sortParams.direction, this.sortParams.sortBy);
 
@@ -53,12 +44,10 @@ class ListViewStore {
         });
     }
 
-    // list
     get currentCars() {
         return getCurrentCards(this.filteredCars, this.currentPage, this.cardsPerPage);
     }
 
-    // list
     get pageNumbersArray() {
         const pageNumbers = [];
 

@@ -1,21 +1,11 @@
 import React from 'react';
 import { useRootStore } from '../../Context/RootStateContext';
-// import makeInputBlank from '../../Common/makeInputBlank';
 import './styles.css';
 
 function AddCardForm() {
     const rootStore = useRootStore();
     const { vehicleModel, vehicleMake } = rootStore;
     
-    // function onFormSubmit(e) {
-    //     e.preventDefault();
-    //     makeInputBlank(e.target.make);
-    //     makeInputBlank(e.target.model);
-    //     vehicleMake.addCar(vehicleModel.model);
-    //     vehicleMake.resetMake();
-    //     vehicleModel.resetModel();
-    // }
-
     return (
         <div>
             <form
@@ -29,7 +19,7 @@ function AddCardForm() {
                     id="make"
                     name="make"
                     onChange={(e) => vehicleMake.addViewStore.setMake(e.target.value)}
-                    />
+                />
 
                 <label htmlFor="model">Model:</label>
                 <input

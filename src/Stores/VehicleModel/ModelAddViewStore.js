@@ -3,16 +3,13 @@ import { decorate, action } from 'mobx';
 import makeInputBlank from '../../Common/makeInputBlank';
 
 class AddViewStore {
-    // add
     addCar = (make, model) => {
         if (make && model)
             this.vehicleModel.cars.push({ make, model, id: nanoid() });
     };
 
-    // add and edit
     resetModel = () => this.vehicleModel.model = '';
 
-    // add and edit
     setModel = (model) => {
         if (model !== '') {
             this.vehicleModel.model = model;

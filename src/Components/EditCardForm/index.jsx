@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles.css'
-// import makeInputBlank from '../../Common/makeInputBlank';
 import { useRootStore } from '../../Context/RootStateContext';
 import { observer } from 'mobx-react';
 
@@ -8,27 +7,14 @@ function EditCardForm(props) {
     const rootStore = useRootStore();
     const { vehicleModel, vehicleMake } = rootStore;
     
-    // function onFormSubmit(e) {
-    //     e.preventDefault();
-    //     makeInputBlank(e.target.make);
-    //     makeInputBlank(e.target.model);
-    //     rootStore.changeCarSpec(props.car, vehicleMake.make, vehicleModel.model);
-    //     vehicleMake.resetMake();
-    //     vehicleModel.resetModel();
-    //     props.setCardClicked(false);
-    // }
-
     return (
         <div className="card-container edit-card">
             <form
                 className="add-card-form"
                 onSubmit={(e) => {
-                    // e.preventDefault();
-                    vehicleMake.editViewStore.onEditFormSubmit(props.car, e)
+                    vehicleMake.editViewStore.onEditFormSubmit(props.car, e);
                     props.setCardClicked(false);
                 }}
-                
-                // onSubmit={(e) => vehicleMake.editViewStore.onEditFormSubmit(props.car, e)}
             >
                 <label htmlFor="make">Make:</label>
                 <input
