@@ -7,7 +7,7 @@ function Searchfield() {
     const { vehicleModel: { listViewStore } } = rootStore;
 
     return (
-        <div>
+        <div className="input-container">
             <h2>Find a car</h2>
             <input
                 className="text-input"

@@ -31,10 +31,13 @@ class ListViewStore {
 
     constructor(vehicleModel) {
         this.vehicleModel = vehicleModel;
+        this.selectedMake = this.vehicleModel.rootStore.vehicleMake.listViewStore.selectedMake;
     }
 
     get filteredCars() {
-        const sortedCars = sortItems(this.vehicleModel.cars.slice(), this.sortParams.direction, this.sortParams.sortBy);
+        const carsArray = this.vehicleModel.rootStore.vehicleMake.listViewStore.allCarsOfMake || this.vehicleModel.cars.slice();
+        // console.log(this.vehicleModel.rootStore.vehicleMake.listViewStore.currentCars)
+        const sortedCars = sortItems(/* this.vehicleModel.cars.slice() */carsArray , this.sortParams.direction, this.sortParams.sortBy);
 
         return sortedCars.filter(car => {
             return (
@@ -45,6 +48,7 @@ class ListViewStore {
     }
 
     get currentCars() {
+        console.log(this.filteredCars)
         return getCurrentCards(this.filteredCars, this.currentPage, this.cardsPerPage);
     }
 
@@ -71,6 +75,7 @@ decorate(ListViewStore, {
     currentCars: computed,
     changeSearchText: action,
     setSortParams: action,
+    selectedMake: observable,
 });
 
 export default ListViewStore;
